@@ -376,7 +376,7 @@ void CirclesGridClusterFinder::rectifyPatternPoints(const std::vector<cv::Point2
     int j = trueIndices[idx].x;
     if(isAsymmetricGrid)
     {
-      idealPoints.push_back(Point2f((2*j + i % 2)*squareSize, i*squareSize));
+      idealPoints.push_back(Point2f((2*j + i % 2)*squareSize, i*squareSize*2.0*0.866025));
     }
     else
     {
@@ -409,7 +409,7 @@ void CirclesGridClusterFinder::parsePatternPoints(const std::vector<cv::Point2f>
     {
       Point2f idealPt;
       if(isAsymmetricGrid)
-        idealPt = Point2f((2*j + i % 2)*squareSize, i*squareSize);
+        idealPt = Point2f((2*j + i % 2)*squareSize, i*squareSize*2.0*0.866025);
       else
         idealPt = Point2f(j*squareSize, i*squareSize);
 
